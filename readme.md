@@ -2,7 +2,8 @@ Check ZFS Pools for Errors
 ==========================
 
 This is an extremely simple script that will return the output of `zpool
-status` if the word `DEGRADED` is seen when running the `zpool status` command.
+status` if the word `DEGRADED` or `FAULTED` is seen when running the
+`zpool status` command.
 
 Suggested use is to set this up to run every few hours via `cron`, which (when
 properly configured) will email the root user anything printed to stdout.
