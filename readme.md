@@ -13,9 +13,17 @@ Testing
 -------
 
 You can easily test that this is working by intentionally putting your
-array in a degraded state. For example, `zpool offline DEVICE_NAME`
-should put the pool into a degraded state and `zpool online DEVICE_NAME`
-will restore it to good health.
+array in a degraded state. For example:
+
+```
+$ ./check-for-degraded-zfs.sh # should return with no output 
+
+$ zpool offline POOL_NAME DEVICE_NAME # Pool is now degraded
+
+$ ./check-for-degraded-zfs.sh # should warn and show zpool status
+
+$ zpool online POOL_NAME DEVICE_NAME # Pool should now recover
+```
 
 Officially, I wouldn't recommend doing this on a pool containing
 critical data, but you should be able to take a drive offline, see that
