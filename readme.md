@@ -24,6 +24,8 @@ $ zpool offline POOL_NAME DEVICE_NAME
 
 $ ./check-for-degraded-zfs.sh
 # Should warn and show zpool status
+# If you're using cron you'd be well-advised to test that this works
+# through cron in addition to directly executing it!
 
 $ zpool online POOL_NAME DEVICE_NAME
 # Pool should now recover automatically
