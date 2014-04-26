@@ -16,13 +16,17 @@ You can easily test that this is working by intentionally putting your
 array in a degraded state. For example:
 
 ```
-$ ./check-for-degraded-zfs.sh # should return with no output 
+$ ./check-for-degraded-zfs.sh
+# Should return with no output 
 
-$ zpool offline POOL_NAME DEVICE_NAME # Pool is now degraded
+$ zpool offline POOL_NAME DEVICE_NAME
+# Pool is now degraded
 
-$ ./check-for-degraded-zfs.sh # should warn and show zpool status
+$ ./check-for-degraded-zfs.sh
+# Should warn and show zpool status
 
-$ zpool online POOL_NAME DEVICE_NAME # Pool should now recover
+$ zpool online POOL_NAME DEVICE_NAME
+# Pool should now recover automatically
 ```
 
 Officially, I wouldn't recommend doing this on a pool containing
