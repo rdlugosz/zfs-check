@@ -5,8 +5,12 @@ This is an extremely simple script that will return the output of `zpool
 status` if the word `DEGRADED` or `FAULTED` is seen when running the
 `zpool status` command.
 
-Suggested use is to set this up to run every few hours via `cron`, which (when
-properly configured) will email the root user anything printed to stdout. Make sure you have a filter on your email client that prevents email from your server from being sent to the spam folder!
+Suggested use is to set this up to run every few hours via `cron`, which
+(when [properly
+configured](http://forums.debian.net/viewtopic.php?f=16&t=107671)) will
+email the root user anything printed to stdout. Make sure you have a
+filter on your email client that prevents email from your server from
+being sent to the spam folder!
 
 
 Testing
